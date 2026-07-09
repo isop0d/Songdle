@@ -1,13 +1,80 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Songdle</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songdle - Guess the Song!</title>
+  <!-- Link the simple stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1> Songdle</h1>
+      <p>Guess the song of the day in as few tries as possible!</p>
+    </header>
+
+    <!-- The 6 guesses list -->
+    <div id="guesses-container">
+      <div class="guess-row" id="guess-1">1.</div>
+      <div class="guess-row" id="guess-2">2.</div>
+      <div class="guess-row" id="guess-3">3.</div>
+      <div class="guess-row" id="guess-4">4.</div>
+      <div class="guess-row" id="guess-5">5.</div>
+      <div class="guess-row" id="guess-6">6.</div>
+    </div>
+
+    <!-- Audio Player Section -->
+    <div class="player-section">
+      <!-- Segmented bar representing unlock levels: 1s, 2s, 4s, 7s, 11s, 16s -->
+      <div class="progress-bar-container">
+        <div class="progress-bar-segment" style="width: 6.25%">1s</div>
+        <div class="progress-bar-segment" style="width: 6.25%">2s</div>
+        <div class="progress-bar-segment" style="width: 12.5%">4s</div>
+        <div class="progress-bar-segment" style="width: 18.75%">7s</div>
+        <div class="progress-bar-segment" style="width: 25.0%">11s</div>
+        <div class="progress-bar-segment" style="width: 31.25%">16s</div>
+      </div>
+
+      <!-- The actual playback progress bar -->
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <!-- Media buttons and text feedback -->
+      <div class="player-controls">
+        <button id="play-btn">▶ Play</button>
+        <span id="time-display">0:00 / 0:01</span>
+      </div>
+    </div>
+
+    <!-- Input Section for user guesses -->
+    <div class="input-section">
+      <input type="text" id="song-input" placeholder="Type song title or artist..." autocomplete="off" />
+      <div class="button-group">
+        <button id="skip-btn">Skip (+1s)</button>
+        <button id="submit-btn">Submit</button>
+      </div>
+    </div>
+
+    <!-- Game Result Popup Modal -->
+    <div id="result-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="result-title">You Won! </h2>
+        <p id="result-message">The song was: <strong>Artist - Song Name</strong></p>
+        <button id="play-again-btn">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden audio element used for playing the sound clips -->
+  <audio id="audio-player"></audio>
+
+  <!-- Link the simple game logic -->
+  <script type="module" src="script.js"></script>
+</body>
+
 </html>

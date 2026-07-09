@@ -1,0 +1,269 @@
+/* 
+  Songdle Stylesheet 
+  Written in a simple, straightforward style typical of a first personal project.
+*/
+
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main wrapper box */
+.container {
+  width: 450px;
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #444444;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #cccccc;
+  font-size: 14px;
+}
+
+/* Rows for the guesses */
+#guesses-container {
+  margin-bottom: 20px;
+}
+
+.guess-row {
+  background-color: black;
+  border: 1px solid #555555;
+  height: 40px;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+/* Guess outcome colors */
+.guess-row.correct {
+  background-color: #4CAF50;
+  /* Green */
+  color: white;
+}
+
+.guess-row.incorrect {
+  background-color: #f44336;
+  /* Red */
+  color: white;
+  text-decoration: line-through;
+}
+
+.guess-row.skipped {
+  background-color: black;
+  /* Grey */
+  color: #dddddd;
+}
+
+/* Player Box styling */
+.player-section {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Progress bar chunks for times */
+.progress-bar-container {
+  display: flex;
+  height: 20px;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.progress-bar-segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  color: #888888;
+  border-right: 1px solid #333333;
+  background-color: #222222;
+}
+
+.progress-bar-segment:last-child {
+  border-right: none;
+}
+
+.progress-bar-segment.unlocked {
+  background-color: #444444;
+  color: white;
+}
+
+/* Playback indicator bar */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #111111;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+/* Controls buttons and text */
+.player-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#play-btn {
+  background-color: #008CBA;
+  /* Blue button */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#play-btn:hover {
+  background-color: #007B9A;
+}
+
+#time-display {
+  font-size: 13px;
+  color: #bbbbbb;
+}
+
+/* Input text and form buttons */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#song-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #222222;
+  border: 1px solid #555555;
+  color: white;
+  border-radius: 4px;
+}
+
+#song-input:focus {
+  border-color: #008CBA;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+#skip-btn {
+  flex: 1;
+  background-color: #555555;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#skip-btn:hover {
+  background-color: #444444;
+}
+
+#submit-btn {
+  flex: 1;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Simple result alert box (modal overlay) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #555555;
+  width: 300px;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #cccccc;
+}
+
+#play-again-btn {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#play-again-btn:hover {
+  background-color: #007B9A;
+}
