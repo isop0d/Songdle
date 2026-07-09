@@ -16,8 +16,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-# Comes from .env locally, or the host's environment settings when deployed.
-# Never write the actual key in code - this file is public on GitHub.
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 class User(db.Model):
