@@ -1,7 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request
 from forms import RegistrationForm, LogInForm
 from flask_sqlalchemy import SQLAlchemy
-from flask import redirect
+import requests
 
 
 
@@ -74,6 +74,17 @@ def start():
 @app.route("/index")
 def index():
     return render_template("index.html")
+
+# The browser can't call api.deezer.com directly (CORS blocks it), so the
+# frontend calls /api/deezer/... and this route forwards it to Deezer.
+# Example: /api/deezer/search?q=daft -> https://api.deezer.com/search?q=daft
+@app.route("/api/deezer/<path:subpath>")
+def deezer_proxy(subpath):
+    response = requests.get(
+        f"https://api.deezer.com/{subpath}",
+        params=request.args
+    )
+    return response.json()
 
 with app.app_context():
     db.create_all()

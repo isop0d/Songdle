@@ -1,9 +1,8 @@
 // Main game logic for Songdle.
 
-import { getTodaysTrackId } from './src/lib/dailySong.js'
-import { getTrack } from './src/lib/deezer.js'
-import { searchTracks } from './src/lib/deezer.js'
-// import { supabase } from './src/lib/supabase.js' still need to work on this...
+import { getTodaysTrackId } from './lib/dailySong.js'
+import { getTrack } from './lib/deezer.js'
+import { searchTracks } from './lib/deezer.js'
 
 // How many seconds of the song are unlocked at each guess.
 const DURATIONS = [1, 2, 4, 7, 11, 16]
