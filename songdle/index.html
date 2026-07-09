@@ -31,12 +31,12 @@
     <div class="player-section">
       <!-- Segmented bar representing unlock levels: 1s, 2s, 4s, 7s, 11s, 16s -->
       <div class="progress-bar-container">
-        <div class="progress-bar-segment" style="width: 6.25%">1s</div>
-        <div class="progress-bar-segment" style="width: 6.25%">2s</div>
-        <div class="progress-bar-segment" style="width: 12.5%">4s</div>
-        <div class="progress-bar-segment" style="width: 18.75%">7s</div>
-        <div class="progress-bar-segment" style="width: 25.0%">11s</div>
-        <div class="progress-bar-segment" style="width: 31.25%">16s</div>
+        <div class = progress-bar-segment id="progress-bar-segment-1" style="width: 6.25%">1s</div>
+        <div class="progress-bar-segment" id="progress-bar-segment-2" style="width: 6.25%">2s</div>
+        <div class="progress-bar-segment" id="progress-bar-segment-3" style="width: 12.5%">4s</div>
+        <div class="progress-bar-segment" id="progress-bar-segment-4" style="width: 18.75%">7s</div>
+        <div class="progress-bar-segment" id="progress-bar-segment-5" style="width: 25.0%">11s</div>
+        <div class="progress-bar-segment" id="progress-bar-segment-6" style="width: 31.25%">16s</div>
       </div>
 
       <!-- The actual playback progress bar -->
@@ -54,8 +54,11 @@
     <!-- Input Section for user guesses -->
     <div class="input-section">
       <input type="text" id="song-input" placeholder="Type song title or artist..." autocomplete="off" />
+      <div id="search-results">
+        <!-- Search results will be displayed here -->
+      </div>
       <div class="button-group">
-        <button id="skip-btn">Skip (+1s)</button>
+        <button id="skip-btn">Skip</button>
         <button id="submit-btn">Submit</button>
       </div>
     </div>

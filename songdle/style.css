@@ -267,3 +267,10 @@ header p {
 #play-again-btn:hover {
   background-color: #007B9A;
 }
+
+#search-results {
+  background-color: #222222;
+  overflow-y: auto;
+  margin-top: 5px;
+  cursor: pointer;
+}
