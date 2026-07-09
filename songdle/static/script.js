@@ -21,11 +21,25 @@ const playBtn = document.getElementById('play-btn')
 const submitBtn = document.getElementById('submit-btn')
 const skipBtn = document.getElementById('skip-btn')
 const songInput = document.getElementById('song-input')
-}
+const prevDayBtn = document.getElementById('prev-day-btn')
+const nextDayBtn = document.getElementById('next-day-btn')
+const dayLabel = document.getElementById('day-label')
 
+// Update the day label to reflect the current day offset
 function updateDayLabel() {
+    if (dayOffset === 0) {
+        dayLabel.textContent = 'Today';
+        return;
+    }
+    if (dayOffset === 1) {
+        dayLabel.textContent = 'Yesterday';
+        return;
+    }
+
+    // Start from a fresh "today" every time. setDate() permanently changes
+    // the date object, so a shared one would drift further back on every click.
+    const day = new Date();
     day.setDate(day.getDate() - dayOffset);
-    const dayLabel = document.getElementById('day-label');
     dayLabel.textContent = day.getDate() + '/' + (day.getMonth() + 1) + '/' + day.getFullYear();
 }
 
@@ -33,14 +47,26 @@ function resetGame() {
     guesses = []
     guesslen = 1
     selectedTrack = null
-    track = getTrackId(dayOffset) // Load the track for the current day offset
+    songInput.value = ''
     updateDayLabel() // Update the day label to reflect the current day offset
-    
-    // Reset the progress bar segments
+
+    // Reset the progress bar segments back to the stylesheet's colors
+    // ('' means "remove my inline style, use the CSS")
     const progressBarSegments = document.querySelectorAll('.progress-bar-segment');
     progressBarSegments.forEach(segment => {
-        segment.style.backgroundColor = 'lightgray';
+        segment.style.backgroundColor = '';
     });
+
+    // Put the guess rows back to "1." ... "6." and clear their colors
+    for (let i = 1; i <= DURATIONS.length; i++) {
+        const row = document.getElementById(`guess-${i}`);
+        row.textContent = `${i}.`;
+        row.classList.remove('correct', 'incorrect', 'skipped');
+    }
+
+    const searchResults = document.getElementById('search-results');
+    searchResults.innerHTML = '';
+}
 
 // Load the song of the day 
 async function loadTodaysSong() {
@@ -134,14 +160,20 @@ submitBtn.addEventListener('click', () => {
 
     if (!guess) return;
 
+    // Decide right/wrong FIRST, then color the row to match.
+    const isCorrect = guess.id === track.id;
+
     if (guesses.length < DURATIONS.length) {
         guesses.push(guess);
         songInput.value = '';
-        document.getElementById(`guess-${guesslen}`).textContent = guess.title;
-        document.getElementById(`progress-bar-segment-${guesslen}`).style.backgroundColor = 'green';
+        const row = document.getElementById(`guess-${guesslen}`);
+        row.textContent = guess.title;
+        row.classList.add(isCorrect ? 'correct' : 'incorrect');
+        const progressBarSegments = document.querySelectorAll('.progress-bar-segment');
+        progressBarSegments[guesslen - 1].style.backgroundColor = isCorrect ? 'green' : 'red';
         guesslen++;
     }
-    if (guess.id === track.id) {
+    if (isCorrect) {
         // Handle correct guess
         console.log('Correct guess!');
         gameOver(true);
@@ -159,8 +191,11 @@ submitBtn.addEventListener('click', () => {
 skipBtn.addEventListener('click', () => {
     if (guesses.length < DURATIONS.length) {
         guesses.push('skipped');
-        document.getElementById(`guess-${guesslen}`).textContent = 'skipped';
-        document.getElementById(`progress-bar-segment-${guesslen}`).style.backgroundColor = 'yellow';
+        const row = document.getElementById(`guess-${guesslen}`);
+        row.textContent = 'skipped';
+        row.classList.add('skipped');
+        const progressBarSegments = document.querySelectorAll('.progress-bar-segment');
+        progressBarSegments[guesslen - 1].style.backgroundColor = 'yellow';
         guesslen++;
     }
     if (guesses.length >= DURATIONS.length) {
@@ -172,18 +207,16 @@ skipBtn.addEventListener('click', () => {
 
 prevDayBtn.addEventListener('click', () => {
     dayOffset++;
-    loadTodaysSong();
     resetGame();
-    document.getElementById('day-label').textContent = `Day ${dayOffset}`;
+    loadTodaysSong();
     nextDayBtn.style.display = 'inline'; // Show the next day button
 });
 
 nextDayBtn.addEventListener('click', () => {
     if (dayOffset > 0) {
         dayOffset--;
-        loadTodaysSong();
         resetGame();
-        document.getElementById('day-label').textContent = `Day ${dayOffset}`;
+        loadTodaysSong();
         if (dayOffset === 0) {
             nextDayBtn.style.display = 'none'; // Hide the next day button if we're back to today
         }

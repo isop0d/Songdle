@@ -3,6 +3,11 @@ from forms import RegistrationForm, LogInForm
 from flask_sqlalchemy import SQLAlchemy
 import requests
 from datetime import date
+import os
+from dotenv import load_dotenv
+
+# Read the .env file and put its values into environment variables.
+load_dotenv()
 
 
 
@@ -11,7 +16,9 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-app.config['SECRET_KEY'] = 'fa9daa2095a9ec8ad6e2a3f312eb87ef'
+# Comes from .env locally, or the host's environment settings when deployed.
+# Never write the actual key in code - this file is public on GitHub.
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
