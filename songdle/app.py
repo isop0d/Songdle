@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm, LogInForm
 from flask_sqlalchemy import SQLAlchemy
+from flask import redirect
+
 
 app = Flask(__name__)
 
@@ -22,6 +24,11 @@ class User(db.Model):
         db.String(50),
         nullable=False
     )
+
+
+@app.route("/")
+def home():
+    return redirect("/start")
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -62,6 +69,10 @@ def login():
 @app.route("/start")
 def start():
     return render_template("start.html")
+
+@app.route("/index")
+def index():
+    return render_template("index.html")
 
 with app.app_context():
     db.create_all()
