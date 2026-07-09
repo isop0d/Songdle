@@ -47,3 +47,18 @@ body {
 .login:hover, button:hover {
     background-color: #092a4d;
 }
+
+.alert {
+    color: black;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+    border: rgb(136, 69, 27) solid 3px;
+    position: fixed;
+    top: 90px;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}

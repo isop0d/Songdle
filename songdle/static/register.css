@@ -69,3 +69,14 @@ fieldset {
 .start:hover, button:hover {
     background-color: #092a4d;
 }
+
+.alert {
+    width: 300px;
+    margin: 20px auto;
+    color: black;
+    background: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+    border: 3px solid rgb(136, 69, 27);
+}

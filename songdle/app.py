@@ -28,15 +28,13 @@ def register():
     form = RegistrationForm()
 
     if form.validate_on_submit():
-       check_user = User.query.filter_by(username=form.username.data
+        check_user = User.query.filter_by(username=form.username.data
         ).first()
-       
-       if check_user:
+        
+        if check_user:
            flash("Username already taken, please try again", 'danger')
            return render_template('register.html', form=form)
-           
-
-    if form.validate_on_submit():
+       
         user = User(
             username=form.username.data,
             password=form.password.data
@@ -45,7 +43,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash(f'Account created for {form.username.data}!', 'success')
-        return render_template("start.html")
+        return redirect("/start")
     return render_template('register.html', title='Register', form=form)
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -56,7 +54,7 @@ def login():
         ).first()
         if user and user.password == form.password.data:
             flash(f'Welcome back, {form.username.data}!', 'success')
-            return render_template("start.html")
+            return redirect("/start")
         else:
             flash("Incorrect login information, please try again!", 'danger')
     return render_template('login.html', title='Login', form=form)
