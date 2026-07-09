@@ -1,0 +1,49 @@
+img {
+    filter: drop-shadow(3px 3px 5px rgb(0, 0, 0));
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+}
+
+.logo img {
+    display: block;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: -120px;
+}
+
+.play img {
+    display: block;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: -250px;
+    transition: transform 0.3s ease;
+}
+
+.play img:hover{
+    transform: scale(1.15); 
+}
+
+.signin, button {
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: 2px solid gray;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: "Lucida Console", Monospace, sans-serif;
+    align-items: center; 
+    margin: 100px auto 0;
+    text-align: center;
+}
+
+.signin:hover, button:hover {
+    background-color: #092a4d;
+}
