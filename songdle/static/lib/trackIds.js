@@ -1,105 +1,131 @@
 // List of Deezer track IDs the game can pick from.
-// Auto-generated from the Deezer 'Top Worldwide' playlist 
+// Auto-generated from Deezer top tracks per artist - do not edit by hand.
 
 export const TRACK_IDS = [
-  3602074142, // Ella Langley - Choosin' Texas
-  4058916481, // Taylor Swift - I Knew It, I Knew You (From "Toy Story 5")
-  3410232121, // Kehlani - Folded
-  3867905101, // Bruno Mars - I Just Might
-  4022917771, // Drake - Janice STFU
-  3818963601, // Tame Impala - Dracula (JENNIE Remix)
-  3503857201, // Olivia Dean - Man I Need
-  3794985752, // sombr - Homewrecker
-  4078104861, // Olivia Rodrigo - drop dead
-  4045817471, // Ariana Grande - hate that i made you love me
-  3562948071, // Olivia Dean - So Easy (To Fall In Love)
-  3171003131, // Bad Bunny - DtMF
-  3834003271, // Ella Langley - Be Her
-  3895241341, // STELLA LEFTY - Boston
-  3056032231, // Shaboozey - Good News
-  3991431871, // Kacey Musgraves - Mexico Honey
-  2729273551, // Shaboozey - A Bar Song (Tipsy)
-  3968924241, // STELLA LEFTY - I Know I Know
-  3850104131, // Megan Moroney - Wedding Dress
-  2801558052, // Billie Eilish - BIRDS OF A FEATHER
-  3339513921, // Shaboozey - Amen
-  3907717261, // BTS - SWIM
-  2999575431, // Cody Johnson - The Fall
-  3838327301, // Luke Combs - Be By You
-  3548216281, // RAYE - WHERE IS MY HUSBAND!
-  3884562301, // Tucker Wetmore - Sunburn
-  3761742092, // Zach Bryan - Plastic Cigarette
-  3326163551, // Morgan Wallen - I Ain't Comin' Back
-  3579685431, // Taylor Swift - The Fate of Ophelia
-  3726350952, // Luke Combs - Sleepless in a Hotel Room
-  3978161521, // Ella Langley - I Can't Love You Anymore
-  3612077412, // Megan Moroney - Beautiful Things
-  3588926901, // PinkPantheress - Stateside + Zara Larsson
-  3466071991, // Jordan Davis - Turn This Truck Around
-  2947516331, // Lady Gaga - Die With A Smile
-  3792429142, // HARDY - McArthur
-  2728070371, // Chappell Roan - Good Luck, Babe!
-  2658723742, // Beyoncé - TEXAS HOLD 'EM
-  2687182182, // Dylan Scott - What He'll Never Have
-  2454854845, // Chappell Roan - Pink Pony Club
-  4015341011, // Shakira - Dai Dai
-  3278152451, // Morgan Wallen - Just In Case
-  564326662,  // Dominic Fike - Babydoll
-  3210709941, // Alex Warren - Ordinary
-  3326277051, // Chris Janson - Me & A Beer
-  4603408,    // Michael Jackson - Billie Jean
-  3884589931, // Carly Pearce - If I Don't Leave I'm Gonna Stay
-  3329748031, // Tucker Wetmore - Brunette
-  538660022,  // Bon Jovi - Livin' On A Prayer
-  2755315691, // Ravyn Lenae - Love Me Not
-  3584537931, // Thomas Rhett - Ain't A Bad Life
-  3092229871, // Max McNown - Better Me For You (Brown Eyes)
-  3171003121, // Bad Bunny - EoO
-  3029738571, // Justin Moore - Time’s Ticking
-  4763165,    // Michael Jackson - Beat It
-  3326208711, // Addison Rae - Headphones On
-  2972837781, // Teddy Swims - Bad Dreams
-  3537727781, // Kevin Powers - Move On
-  3319945671, // Josh Ross - Hate How You Look
-  2815968782, // Lola Young - Messy
-  3812245442, // Don Toliver - E85
-  3410229851, // Disco Lines - No Broke Boys
-  3412611901, // KATSEYE - Gabriela
-  2780753191, // Post Malone - I Had Some Help
-  2861811462, // The Kid LAROI - GIRLS
-  3473545611, // Bailey Zimmerman - Chevy Silverado
-  3366676861, // Morgan Wallen - What I Want
-  2929833161, // Leon Thomas - MUTT
-  3856038511, // Jason Aldean - Don’t Tell On Me
-  2881248402, // Megan Moroney - Am I Okay?
-  3877362091, // Avery Anna - Blood Runs Thicker
-  3366677031, // Morgan Wallen - Don't We
-  3939706891, // Marshmello - Where We Go
-  4024988991, // Diplo - Would U Still Love Me (feat. Cameron Whitcomb)
-  3975391771, // Lily Meola - Daisies
-  2319265575, // Teddy Swims - The Door
-  3962911801, // Miley Cyrus - Younger You (From the "Hannah Montana 20th Anniversary Special")
-  3047560351, // Gracie Abrams - That’s So True
-  3504131311, // Shaboozey - Took A Walk (from "The Long Walk")
-  518458172,  // Guns N' Roses - Sweet Child O' Mine
-  3151351511, // sombr - back to friends
+  959948182,  // Charli xcx - party 4 u
+  4105889521, // Charli xcx - Wink Wink
   2833834872, // Charli xcx - Apple
-  3471224101, // sombr - 12 to 12
-  3262675101, // Doechii - Anxiety
-  2365569495, // Mitski - My Love Mine All Mine
-  15586246,   // Bruce Springsteen - Dancing In the Dark
-  2454854795, // Chappell Roan - HOT TO GO!
-  2609033982, // Michael Marcagi - Scared To Start
-  2831602002, // Sabrina Carpenter - Please Please Please
-  3106586641, // Kendrick Lamar - luther
-  3569857331, // Tate McRae - TIT FOR TAT
-  856124,     // The Outfield - Your Love
-  3678837252, // Corey Kent - Rocky Mountain Low
-  2704682202, // Benson Boone - Beautiful Things
-  3278141801, // Jonas Brothers - Love Me To Heaven
-  2690050002, // Ariana Grande - we can't be friends (wait for your love)
-  69962764,   // The Clash - Should I Stay or Should I Go (Remastered)
-  3848530521, // Temper City - Self Aware
-  3196460531, // Tate McRae - Sports car
-  2461123655, // Bakar - Hell N Back (feat. Summer Walker)
+  2929354381, // Charli xcx - Guess featuring billie eilish
+  2833834822, // Charli xcx - Von dutch
+  2833834772, // Charli xcx - 360
+  4005499231, // Charli xcx - Rock Music
+  3082526391, // Oklou - take me by the hand
+  4033732021, // Bladee - Versailles Flow
+  4033732031, // Bladee - Highland Tyrant
+  4033732041, // Bladee - Dolor
+  1692500117, // Ecco2k - Western Union
+  1752612677, // Bladee - Hotel Breakfast
+  3377596331, // Mechatok - Expression On Your Face
+  1687953667, // Bladee - The Flag is Raised
+  3362199561, // fakemink - MAKKA
+  1687953737, // Bladee - Girls Just Want to Have Fun
+  1692494337, // Ecco2k - Calcium
+  1692494367, // Ecco2k - Security!
+  1687953727, // Bladee - Chaos Follows
+  1692494287, // Ecco2k - Peroxide
+  3937217881, // GENER8ION - STORM II
+  1692471257, // Yung Lean - Ginseng Strip 2002
+  1692469987, // Yung Lean - Agony
+  1692470717, // Yung Lean - Kyoto
+  3045225141, // Charli xcx - 360 featuring robyn & yung lean
+  1704212507, // Yung Lean - Yoshi City
+  3937217871, // GENER8ION - STORM I
+  3189196151, // Bladee - TL;DR
+  3821070471, // Thaiboy Digital - Silk Road
+  3921729021, // Thaiboy Digital - Destiny
+  1961328437, // Thaiboy Digital - True Love
+  3921728931, // Thaiboy Digital - Zatoichi
+  3921728941, // Thaiboy Digital - Come True
+  1692500107, // Bladee - Victim
+  2471885091, // SOPHIE - Immaterial
+  2471885031, // SOPHIE - Ponyboy
+  2471885041, // SOPHIE - Faceshopping
+  1054951702, // SOPHIE - VYZEE
+  1054951722, // SOPHIE - BIPP
+  2471612021, // SOPHIE - Push Emission (Whore Moans)
+  1054951712, // SOPHIE - HARD
+  864796942,  // 100 gecs - money machine
+  2159623877, // 100 gecs - Dumbest Girl Alive
+  864796972,  // 100 gecs - stupid horse
+  2159623887, // 100 gecs - 757
+  2159623897, // 100 gecs - Hollywood Baby
+  2514054001, // Basement Jaxx - where's my head at _
+  864797012,  // 100 gecs - hand crushed by a mallet
+  1184296752, // A. G. Cook - Beautiful
+  3736566332, // A. G. Cook - Residue
+  2768462281, // A. G. Cook - Lucifer
+  2524397191, // Thy Slaughter - Heavy
+  2736929661, // A. G. Cook - Britpop
+  3045225221, // Charli xcx - So I featuring a. g. cook
+  1173861482, // A. G. Cook - Show Me What
+  769248582,  // Caroline Polachek - So Hot You're Hurting My Feelings
+  3045225201, // Charli xcx - Everything is romantic featuring caroline polachek
+  2142188387, // Caroline Polachek - Sunset
+  72333207,   // Blood Orange - Chosen
+  2142188357, // Caroline Polachek - Welcome To My Island
+  2142188367, // Caroline Polachek - Pretty In Possible
+  2142188407, // Caroline Polachek - I Believe
+  3588926901, // PinkPantheress - Stateside + Zara Larsson
+  3344984911, // PinkPantheress - Girl Like Me
+  3344984901, // PinkPantheress - Illegal
+  3991144371, // Zara Larsson - Midnight Sun (Girls Trip)
+  4014260341, // Kelela - the bridge
+  1396813832, // PinkPantheress - Pain
+  2106386037, // PinkPantheress - Boy's a liar Pt. 2
+  3916724001, // Slayyyter - DANCE...
+  3916724041, // Slayyyter - CRANK
+  3916724011, // Slayyyter - BEAT UP CHANEL$
+  3916724131, // Slayyyter - BRITTANY MURPHY.
+  3916724021, // Slayyyter - CANNIBALISM!
+  3916724031, // Slayyyter - OLD TECHNOLOGY
+  3916724101, // Slayyyter - $T. LOSER
+  2359450265, // glaive - the prom
+  3981391821, // glaive - The Front
+  3546957781, // glaive - Fuck
+  3981391771, // glaive - Half Two
+  3101263271, // ericdoa - throw it up
+  1008321682, // glaive - astrid
+  1507629462, // glaive - heather
+  2617681482, // ericdoa - dancinwithsomebawdy
+  1379131632, // ericdoa - fantasize
+  3929972391, // ericdoa - Backdoor
+  4001908301, // ericdoa - Agoraphobia
+  1507629452, // glaive - mental anguish
+  1422769872, // glaive - fuck this town
+  1087122272, // ericdoa - movinglikeazombie
+  4059458201, // AKRIILA - suave (feat. Jane Remover)
+  3678356162, // Jane Remover - How To Teleport
+  3262183121, // Jane Remover - Dancing with your eyes closed
+  3678356132, // Jane Remover - So What?
+  3262183061, // Jane Remover - Psychoboost
+  3262183051, // Jane Remover - TWICE REMOVED
+  3262183101, // Jane Remover - Dreamflasher
+  3896751351, // underscores - Music
+  3896751371, // underscores - The Peace
+  3896751361, // underscores - Hollywood Forever
+  3896751411, // underscores - Do It
+  3896751401, // underscores - Lovefield
+  3896751341, // underscores - Tell Me (U Want It)
+  3896751391, // underscores - Innuendo (I Get U)
+  4129704021, // Ken Carson - shadeson
+  2275275277, // 2hollis - poster boy
+  2799962662, // 2hollis - crush
+  3298557851, // 2hollis - girl
+  3207353351, // 2hollis - afraid
+  2367258015, // 2hollis - cliche
+  3298557801, // 2hollis - cope
+  1500039312, // Sega Bodega - Effeminacy
+  2709716072, // Sega Bodega - True
+  1975634357, // Sega Bodega - Tantarantana
+  2933577741, // Sega Bodega - Teenage Dirtbag
+  2933577711, // Sega Bodega - Komodo
+  1500039372, // Sega Bodega - Cicada (feat. Arca)
+  2933577651, // Sega Bodega - Fade Into You
+  1252222942, // Shygirl - SIREN (Basement Jaxx Cruise Mix)
+  3045225281, // Charli xcx - 365 featuring shygirl
+  3089782741, // Shygirl - F*Me
+  1515510842, // Shygirl - Cleo
+  1719051217, // Shygirl - Shlut
+  2620898162, // Shygirl - thicc
+  3640336122, // Shygirl - FREAK is WILD [skuzland]
 ]

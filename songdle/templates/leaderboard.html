@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songdle - Leaderboard</title>
+  <link rel="stylesheet" href="/static/register.css">
+  <link rel="stylesheet" href="/static/leaderboard.css">
+</head>
+<body>
+  <div class="content-section">
+    <header>
+      <h1>Leaderboard</h1>
+      <p>Today's top guessers - fewest attempts wins!</p>
+    </header>
+
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Attempts</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- One row per result from the /leaderboard route in app.py. -->
+        {% for r in results %}
+        <tr>
+          <td class="rank rank-{{ loop.index }}">{{ loop.index }}</td>
+          <td>{{ r.username }}</td>
+          <td>{{ r.attempts }}/6</td>
+          <td>
+            {% if r.won %}
+              <span class="result won">Won</span>
+            {% else %}
+              <span class="result lost">Lost</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% if not results %}
+      <p class="empty-message">No one has played today yet - be the first!</p>
+    {% endif %}
+  </div>
+
+  <div class="nav-links">
+    <a href="/start" class="start">Home</a>
+    <a href="/index" class="start">Play</a>
+  </div>
+</body>
+</html>

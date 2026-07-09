@@ -1,0 +1,94 @@
+/* Leaderboard page - follows the same theme as the rest of the site:
+   dark page, white card with orange border (from register.css),
+   brown accent rgb(138, 59, 17), wordle green #6aaa64. */
+
+.content-section header h1 {
+  color: #121213;
+  font-size: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.content-section header p {
+  color: #555555;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  color: #1a1a1b;
+}
+
+.leaderboard-table th {
+  background-color: rgb(138, 59, 17);
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.leaderboard-table td {
+  padding: 10px;
+  border-bottom: 2px solid #d3d6da;
+}
+
+/* Zebra stripes like the guess rows */
+.leaderboard-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Rank column */
+.rank {
+  font-weight: bold;
+  width: 40px;
+  text-align: center;
+}
+
+/* Medal colors for the top 3 */
+.rank-1 { color: #d4a017; } /* gold */
+.rank-2 { color: #808080; } /* silver */
+.rank-3 { color: #a05822; } /* bronze */
+
+/* Won / Lost badges, same colors as the guess rows */
+.result {
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+
+.result.won {
+  background-color: #6aaa64;
+}
+
+.result.lost {
+  background-color: #787c7e;
+}
+
+/* Message shown when there are no results yet */
+.empty-message {
+  text-align: center;
+  color: #555555;
+  margin-top: 15px;
+}
+
+.empty-message.hidden {
+  display: none;
+}
+
+/* Home / Play buttons under the card */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nav-links .start {
+  margin: 0;
+}

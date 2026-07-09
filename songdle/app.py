@@ -1,7 +1,8 @@
-from flask import Flask, render_template, url_for, flash, redirect, request
+from flask import Flask, jsonify, render_template, url_for, flash, redirect, request, session
 from forms import RegistrationForm, LogInForm
 from flask_sqlalchemy import SQLAlchemy
 import requests
+from datetime import date
 
 
 
@@ -26,10 +27,61 @@ class User(db.Model):
         nullable=False
     )
 
+class Results(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+    username = db.Column(
+        db.String(20),
+        nullable=False
+    )
+
+    attempts = db.Column(
+        db.Integer,
+        nullable=False
+    )
+
+    play_date = db.Column(
+        db.String(10),
+        nullable=False
+    )
+
+    won = db.Column(
+        db.Boolean,
+        nullable=False
+    )
 
 @app.route("/")
 def home():
     return redirect("/start")
+
+@app.route("/api/result", methods=['POST'])
+def api_result():
+
+    existing = Results.query.filter_by(
+        username=session['username'],
+        play_date=str(date.today())
+    ).first()
+    
+    if existing:
+        return jsonify({"status": "error", "message": "Result already submitted for today"}), 401
+
+
+    elif 'username' not in session:
+        return jsonify({"status": "error", "message": "User not logged in"}), 400
+
+    data = request.get_json()
+
+    result = Results(
+        username=session['username'],
+        attempts=data.get('attempts'),
+        play_date=str(date.today()),
+        won=data.get('won')
+    )
+
+    db.session.add(result)
+    db.session.commit()
+
+    return jsonify({"status": "success"})
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -62,6 +114,7 @@ def login():
         ).first()
         if user and user.password == form.password.data:
             flash(f'Welcome back, {form.username.data}!', 'success')
+            session['username'] = form.username.data
             return redirect("/start")
         else:
             flash("Incorrect login information, please try again!", 'danger')
@@ -69,11 +122,20 @@ def login():
 
 @app.route("/start")
 def start():
-    return render_template("start.html")
+    if 'username' in session:
+        return render_template("start.html", username=session['username'])
+    return redirect("/login")
 
 @app.route("/index")
 def index():
     return render_template("index.html")
+
+@app.route("/leaderboard")
+def leaderboard():
+    results = db.session.query(Results).filter_by(play_date=str(date.today())).order_by(Results.attempts.asc()).all()
+
+    
+    return render_template("leaderboard.html", results=results)
 
 # The browser can't call api.deezer.com directly (CORS blocks it), so the
 # frontend calls /api/deezer/... and this route forwards it to Deezer.

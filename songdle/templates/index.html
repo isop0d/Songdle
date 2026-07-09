@@ -15,6 +15,13 @@
       <p>Guess the song of the day in as few tries as possible!</p>
     </header>
 
+    <!-- Day navigation: play previous days' songs -->
+    <div class="day-nav">
+      <button id="prev-day-btn">&#9664; Previous</button>
+      <span id="day-label">Today</span>
+      <button id="next-day-btn" style="display: none">Next &#9654;</button>
+    </div>
+
     <!-- The 6 guesses list -->
     <div id="guesses-container">
       <div class="guess-row" id="guess-1">1.</div>
@@ -78,8 +85,9 @@
   <!-- Link the simple game logic -->
   <script type="module" src="/static/script.js"></script>
 
-  <div style="margin-top: 20px; text-align: center;">
+  <div style="margin-top: 20px; display: flex; gap: 15px; justify-content: center;">
     <a href="/start" class="start">Home</a>
+    <a href="/leaderboard" class="start" id="leaderboard-link">Leaderboard</a>
   </div>
 </body>
 </html>
