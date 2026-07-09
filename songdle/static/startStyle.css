@@ -25,7 +25,7 @@ body {
     transform: scale(1.15); 
 }
 
-.signin, button {
+.login, button {
     background-color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: 2px solid gray;
@@ -44,6 +44,6 @@ body {
     text-align: center;
 }
 
-.signin:hover, button:hover {
+.login:hover, button:hover {
     background-color: #092a4d;
 }
