@@ -269,8 +269,177 @@ header p {
 }
 
 #search-results {
-  background-color: #222222;
+  background-color: #ffffff;
   overflow-y: auto;
   margin-top: 5px;
   cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* --- Sign Up Theme Adaptations --- */
+
+.content-section {
+  color: #121213 !important;
+}
+
+.content-section header h1 {
+  color: #121213;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.content-section header p {
+  color: #555555;
+  font-size: 14px;
+}
+
+/* Overriding the global button limitations from register.css inside .content-section */
+.content-section button {
+  width: auto !important;
+  height: auto !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  background-color: rgb(138, 59, 17) !important;
+  border-radius: 20px !important;
+  border: 2px solid black !important;
+  color: white !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  text-align: center !important;
+  margin: 0 !important;
+  line-height: normal !important;
+  text-transform: none !important;
+}
+
+.content-section button:hover {
+  background-color: #092a4d !important;
+}
+
+/* Align and size play/submit/skip buttons specifically */
+.content-section #play-btn {
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+}
+
+.content-section .button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.content-section #skip-btn, 
+.content-section #submit-btn {
+  flex: 1 !important;
+}
+
+.content-section #play-again-btn {
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+/* Guess rows - light theme style */
+.content-section .guess-row {
+  background-color: #f8f9fa;
+  border: 2px solid #d3d6da;
+  color: #1a1a1b;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.content-section .guess-row.correct {
+  background-color: #6aaa64;
+  border-color: #6aaa64;
+  color: white;
+}
+
+.content-section .guess-row.incorrect {
+  background-color: #787c7e;
+  border-color: #787c7e;
+  color: white;
+  text-decoration: line-through;
+}
+
+.content-section .guess-row.skipped {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  color: #787c7e;
+  font-style: italic;
+}
+
+/* Player section - light theme integration */
+.content-section .player-section {
+  background-color: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.content-section .progress-bar-container {
+  background-color: #dee2e6;
+  border: 1px solid #ced4da;
+}
+
+.content-section .progress-bar-segment {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-right: 1px solid #dee2e6;
+}
+
+.content-section .progress-bar-segment.unlocked {
+  background-color: #495057;
+  color: white;
+}
+
+.content-section .progress-bar {
+  background-color: #dee2e6;
+}
+
+.content-section #time-display {
+  color: #495057;
+}
+
+/* Input Form focus style override */
+.content-section #song-input {
+  background-color: #ffffff;
+  color: #1a1a1b;
+  border: 2px solid #ced4da;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.content-section #song-input:focus {
+  border-color: rgb(138, 59, 17);
+  outline: none;
+}
+
+/* Modal styling matching sign up themes */
+.content-section .modal-content {
+  background-color: white;
+  border: 5px solid orange;
+  border-radius: 10px;
+  color: #121213;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.content-section .modal-content h2 {
+  color: #121213;
+}
+
+.content-section .modal-content p {
+  color: #555555;
+}
+
+/* Search suggestions details */
+#search-results div {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  color: #333333;
+}
+
+#search-results div:hover {
+  background-color: #f1f3f5;
 }
